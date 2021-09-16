@@ -7,17 +7,17 @@ public:
     float a;
     float b;
 
-    void rectangleArea();
-    void rectangleCircumference();
+    float rectangleArea(float a, float b);
+    float rectangleCircumference(float a, float b);
 };
 
-void rectangle::rectangleArea(){
+float rectangle::rectangleArea(float a, float b){
 float Area = a*b;
 
 cout << Area << endl;
 };
 
-void rectangle::rectangleCircumference(){
+float rectangle::rectangleCircumference(float a, float b){
 float Circumference = a*2 + b*2;
 
 cout << Circumference << endl;
