@@ -13,19 +13,17 @@ public:
     Date dateBirthday {};
 
     void showAllData();
-    void setId(unsigned int x, string name1, string surname1, int dd1, int mm1, int rrrr1){
-    id=x;
-    name=name1;
-    surname=surname1;
-    dateBirthday.dd = dd1;
-    dateBirthday.mm = mm1;
-    dateBirthday.rrrr = rrrr1;
+    void setId(unsigned int id, string name, string surname, Date dateBirthday){
+    worker::id=id;
+    worker::name=name;
+    worker::surname=surname;
+    worker::dateBirthday = dateBirthday;
     };
 };
 
 void worker::showAllData(){
     cout << "Dane pracownika:\n" << "Id: " << id
-    << "\nImiê i nazwisko: " << name << " " << surname
+    << "\nImiÃª i nazwisko: " << name << " " << surname
     << "\nData urodzenia: " << dateBirthday.dd << "-"
     << dateBirthday.mm << "-" << dateBirthday.rrrr << "r." << endl;
 }
@@ -34,7 +32,7 @@ int main(int argc, char** argv)
 {
     setlocale(LC_CTYPE, "polish");
     worker pracownik;
-    pracownik.setId(100, "Janusz", "Nowak", 16, 9, 2021);
+    pracownik.setId(100, "Janusz", "Nowak",{16, 9, 2021});
 
     pracownik.showAllData();
 
