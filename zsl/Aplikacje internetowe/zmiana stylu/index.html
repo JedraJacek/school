@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border: 1px solid green;
+            border-collapse: collapse;
+            background-color: honeydew;
+            text-align: center;
+        }
+        th{
+            padding: 10px;
+        }
+        td{
+            border: 1px solid green;
+            padding-top: 20px;
+        }
+        button{
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <table id="table">
+        <tr>
+            <th>Produkt</th><th>Jednostka</th><th>Dostępna ilość</th><th>Aktualizacja</th><th>Zamówienie</th>
+        </tr>
+        <tr>
+            <td class="name">Skrętka U/UTP drut</td><td>metr</td><td /id="d1"/ class="d">20</td><td><button onclick="Aktualizuj(0)">Aktualizuj</button></td><td><button onclick="Zamow(0)">Zamów</button></td>
+        </tr>
+        <tr>
+            <td class="name">Skrętka U/UTP linka</td><td>metr</td><td /id="d2"/ class="d">2</td><td><button onclick="Aktualizuj(1)">Aktualizuj</button></td><td><button onclick="Zamow(1)">Zamów</button></td>
+        </tr>
+        <tr>
+            <td class="name">Wtyki 8P8C</td><td>sztuki</td><td /id="d3"/ class="d">10</td><td><button onclick="Aktualizuj(2)">Aktualizuj</button></td><td><button onclick="Zamow(2)">Zamów</button></td>
+        </tr>
+        <tr>
+            <td class="name">Moduły Keystone</td><td>sztuki</td><td /id="d4"/ class="d">30</td><td><button onclick="Aktualizuj(3)">Aktualizuj</button></td><td><button onclick="Zamow(3)">Zamów</button></td>
+        </tr>
+    </table>
+    <script>
+        let id_zamowienia = 0;
+        Braki();
+
+        function Aktualizuj(i){
+            var tab = document.querySelectorAll('.d');
+            var n = prompt("Podaj nową ilość:");
+            tab[i].innerHTML = n;
+            Braki();
+        }
+
+        function Zamow(i){
+            id_zamowienia++;
+            var tab = document.querySelectorAll('.name');
+            alert("Zamówienie nr: "+id_zamowienia+" Produkt: "+tab[i].innerHTML);
+        }
+
+        /*function Braki(){
+            var d1 = document.getElementById('d1');
+            var d2 = document.getElementById('d2');
+            var d3 = document.getElementById('d3');
+            var d4 = document.getElementById('d4');
+
+            var d1v = document.getElementById('d1').innerHTML;
+            var d2v = document.getElementById('d2').innerHTML;
+            var d3v = document.getElementById('d3').innerHTML;
+            var d4v = document.getElementById('d4').innerHTML;
+
+            if(parseInt(d1v) == 0 ){
+                d1.style.backgroundColor="red";
+            } else if(parseInt(d1v) > 0 && parseInt(d1v) < 6){
+                d1.style.backgroundColor="yellow";
+            }else {
+                d1.style.backgroundColor="Honeydew";
+            }
+
+            if(parseInt(d2v) == 0 ){
+                d2.style.backgroundColor="red";
+            } else if(parseInt(d2v) > 0 && parseInt(d2v) < 6){
+                d2.style.backgroundColor="yellow";
+            }else {
+                d2.style.backgroundColor="Honeydew";
+            }
+
+            if(parseInt(d3v) == 0 ){
+                d3.style.backgroundColor="red";
+            } else if(parseInt(d3v) > 0 && parseInt(d3v) < 6){
+                d3.style.backgroundColor="yellow";
+            }else {
+                d3.style.backgroundColor="Honeydew";
+            }
+
+            if(parseInt(d4v) == 0 ){
+                d4.style.backgroundColor="red";
+            } else if(parseInt(d4v) > 0 && parseInt(d4v) < 6){
+                d4.style.backgroundColor="yellow";
+            }else {
+                d4.style.backgroundColor="Honeydew";
+            }
+        }*/
+
+        function Braki(){
+            var tab = document.querySelectorAll('.d');
+
+            
+            for(var i=0;i<tab.length;i++){
+                if(tab[i].innerHTML == 0){
+                tab[i].style.backgroundColor="red";
+            } else if(tab[i].innerHTML > 0 && tab[i].innerHTML < 6){
+                tab[i].style.backgroundColor="yellow";
+            } else {
+                tab[i].style.backgroundColor="Honeydew"
+            }
+            }
+        }
+    </script>
+</body>
+</html>
