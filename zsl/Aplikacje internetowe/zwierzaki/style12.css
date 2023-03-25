@@ -1,0 +1,46 @@
+body {
+    font-family: Verdana;
+}
+#menu {
+    background-color: sandybrown;
+    height: 120px;
+    width: 60%;
+    float: left;
+    line-height: 120px;
+}
+#logo {
+    background-color: sienna;
+    color: white;
+    text-align: center;
+    height: 120px;
+    width: 40%;
+    float: left;
+}
+#left {
+    background-color: sienna;
+    color: white;
+    height: 700px;
+    width: 60%;
+    float: left;
+}
+#right {
+    background-color: sandybrown;
+    height: 700px;
+    width: 40%;
+    float: left;
+}
+footer {
+    background-color: #4D1900;
+    color: white;
+    text-align: right;
+    clear: both;
+}
+#menu a {
+    background-color: green;
+    color: yellow;
+    padding: 20px 50px 20px 50px;
+}
+#menu a:hover {
+    background-color: yellow;
+    color: green;
+}
